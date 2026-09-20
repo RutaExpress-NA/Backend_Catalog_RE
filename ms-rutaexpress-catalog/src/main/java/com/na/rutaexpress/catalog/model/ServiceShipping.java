@@ -24,19 +24,19 @@ public class ServiceShipping {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable=false)
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(nullable=false)
+    @Column(name = "description", nullable = false)
     private String description;
     
-    @Column(nullable=false)
+    @Column(name = "price", nullable=false)
     private Integer price;
 
-    @Column(nullable=false)
+    @Column(name = "active", nullable=false)
     private Boolean active;
 
-    @Column(nullable=false)
+    @Column(name = "vehicle_type_required", nullable=false)
     private String vehicleTypeRequired;
 
     public ServiceShipping(String name, String description, Integer price, Boolean active, String vehicleTypeRequired) {

@@ -24,13 +24,13 @@ public class FleetCapacity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false)
+    @Column(name = "vehicle_type", unique = true, nullable = false)
     private String vehicleType;
     
-    @Column(nullable=false)
+    @Column(name = "total_capacity", nullable=false)
     private Integer totalCapacity;
 
-    @Column(nullable=false)
+    @Column(name = "current_available", nullable=false)
     private Integer currentAvailable;
 
     public FleetCapacity(String vehicleType, Integer totalCapacity, Integer currentAvailable) {
