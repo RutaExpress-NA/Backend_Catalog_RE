@@ -40,4 +40,13 @@ public class FleetCapacityService {
     flota.setCurrentAvailable(flota.getCurrentAvailable() - 1);
     return fleetCapacityRepository.save(flota);
     }
+
+    public FleetCapacity reponerCapacidad(String vehicleType) {
+        FleetCapacity flota = fleetCapacityRepository.findByVehicleType(vehicleType)
+            .orElseThrow(() -> new RuntimeException("Tipo de vehiculo no encontrado: " + vehicleType));
+
+        int nuevoDisponible = Math.min(flota.getCurrentAvailable() + 1, flota.getTotalCapacity());
+        flota.setCurrentAvailable(nuevoDisponible);
+        return fleetCapacityRepository.save(flota);
+    }
 }
