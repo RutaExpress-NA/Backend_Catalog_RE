@@ -58,4 +58,15 @@ public class FleetCapacityController {
             return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
         }
     }
+
+    @PutMapping("/{vehicleType}/reponer")
+    public ResponseEntity<FleetCapacity> reponer(@PathVariable String vehicleType) {
+        try {
+        FleetCapacity flota = fleetCapacityService.reponerCapacidad(vehicleType);
+        return ResponseEntity.ok(flota);
+            } catch (RuntimeException e) {
+
+            return ResponseEntity.notFound().build();
+            }
+    }
 }
