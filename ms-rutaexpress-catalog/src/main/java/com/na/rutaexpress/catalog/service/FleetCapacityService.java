@@ -33,11 +33,11 @@ public class FleetCapacityService {
     FleetCapacity flota = fleetCapacityRepository.findByVehicleType(vehicleType)
         .orElseThrow(() -> new RuntimeException("Tipo de vehiculo no encontrado: " + vehicleType));
 
-    if (flota.getCurrentlyAvailable() <= 0) {
+    if (flota.getCurrentAvailable() <= 0) {
         throw new RuntimeException("Sin capacidad disponible para: " + vehicleType);
     }
 
-    flota.setCurrentlyAvailable(flota.getCurrentlyAvailable() - 1);
+    flota.setCurrentAvailable(flota.getCurrentAvailable() - 1);
     return fleetCapacityRepository.save(flota);
     }
 }

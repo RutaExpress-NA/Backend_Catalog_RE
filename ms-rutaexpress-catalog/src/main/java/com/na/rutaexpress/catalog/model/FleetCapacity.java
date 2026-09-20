@@ -31,11 +31,11 @@ public class FleetCapacity {
     private Integer totalCapacity;
 
     @Column(nullable=false)
-    private Integer currentlyAvailable;
+    private Integer currentAvailable;
 
-    public FleetCapacity(String vehicleType, Integer totalCapacity, Integer currentlyAvailable) {
+    public FleetCapacity(String vehicleType, Integer totalCapacity, Integer currentAvailable) {
         this.vehicleType = vehicleType;
         this.totalCapacity = totalCapacity;
-        this.currentlyAvailable = currentlyAvailable;
+        this.currentAvailable = currentAvailable;
     }
 }
