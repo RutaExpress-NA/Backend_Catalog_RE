@@ -43,3 +43,5 @@ jobs:
         run: |
           kubectl set image deployment/rutaexpress-catalog catalog=$ECR_REGISTRY/rutaexpress-catalog:$IMAGE_TAG -n rutaexpress
           kubectl rollout status deployment/rutaexpress-catalog -n rutaexpress --timeout=300s
+
+#mensaje checkpoint prueba de pipeline
